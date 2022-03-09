@@ -1,0 +1,45 @@
+   
+<!doctype html> 
+<html lang="en">  
+<head>
+<meta charset="utf-8">
+<title>checklist</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.icon">  
+ <link rel="stylesheet" href="list.css">    
+    </head>
+ <body> 
+<div class="container">
+ <div class="todolist">
+<h1>To Do List</h1> 
+ <div class="date">
+<h2>
+<span id="month"></span>
+<span id="date"></span>
+<span id="year"></span>
+ </h2>
+<h3 id="day"></h3>
+</div>
+ <div ng-app="TodoApp" ng-controller="myCtrl">
+ <div class="list">
+ <div ng-repeat="x in TodoList" class="todo-items">
+ <ul>
+ <li>
+<input class="checkBox" type="checkbox" ng-model="x.done">
+<label class="todotext" ng-bind="x.TodoText"></label>
+<span class="close" ng-click="remove()">x</span>
+ </li>
+ </ul>
+ </div>
+</div>
+<form ng-submit="addItem()" name="myForm">
+<input type="text" placeholder="Add a to do" ng-model="addTodo" required>
+<button type="submit" class="btn">Add!</button> 
+</form>
+</div>
+ </div>
+</div>  
+<script src="checklist.js"></script>
+
+    
+</body>
